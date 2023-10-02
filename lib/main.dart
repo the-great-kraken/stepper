@@ -3,11 +3,14 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:stepper/bloc/home/bloc.dart';
+import 'package:stepper/bloc/step/bloc.dart';
 import 'package:stepper/screen/auth_screen/signup.dart';
 import 'bloc/signup/bloc.dart';
 
 import 'bloc/auth/bloc.dart';
 import 'firebase_options.dart';
+import 'screen/home_screen/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,6 +33,8 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider<AppBloc>(create: (context) => AppBloc()),
         BlocProvider<SignUpBloc>(create: (context) => SignUpBloc()),
+        BlocProvider<StepCountBloc>(create: (context) => StepCountBloc()),
+        BlocProvider<HomeBloc>(create: (context) => HomeBloc()),
       ],
       child: BlocBuilder<AppBloc, AppState>(
         builder: (context, state) {
@@ -40,7 +45,7 @@ class MyApp extends StatelessWidget {
                 colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
                 useMaterial3: true,
               ),
-              home: const MyHomePage(title: 'Flutter Demo Home Page'),
+              home: const HomePage(),
             );
           } else {
             return MaterialApp(
@@ -55,30 +60,5 @@ class MyApp extends StatelessWidget {
         },
       ),
     );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: Text(widget.title),
-          actions: [
-            IconButton(
-                onPressed: () => context.read<AppBloc>().add(AppLogout()),
-                icon: Icon(Icons.logout)),
-          ],
-        ),
-        body: Center());
   }
 }
