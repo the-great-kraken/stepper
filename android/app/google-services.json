@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "192447244106",
+    "project_id": "stepper-3a9fe",
+    "storage_bucket": "stepper-3a9fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:192447244106:android:11eead1cda547c6bda03b3",
+        "android_client_info": {
+          "package_name": "com.example.stepper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "192447244106-caqo53i9khkvusvlca1ap3kvlejcv9vi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIMDqcl4zKf6OUDFDc8ZWXtrPlFoNtnU0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "192447244106-caqo53i9khkvusvlca1ap3kvlejcv9vi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
