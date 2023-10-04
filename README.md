@@ -17,4 +17,4 @@ Step tracker Flutter app
    <img src="assets/stepper.jpg" alt="drawing" width="200"/>
    
 5) Enjoy :)
-![Demo](assets/stepper_video_demo.gif)
+![Demo](assets/stepper_video.gif)
