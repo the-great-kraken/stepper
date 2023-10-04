@@ -1,16 +1,20 @@
-# stepper
+# stepper #
 
-A new Flutter project.
+Step tracker Flutter app 
 
-## Getting Started
+### USE ###
 
-This project is a starting point for a Flutter application.
+* BLOC
+* Firestore as a DataBase
+* Firebase to login/register
+* [pedometer lib](https://pub.dev/packages/pedometer) to steps counting
 
-A few resources to get you started if this is your first Flutter project:
+### How to use ###
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1) Run the app and grant permission to record activity
+2) The program must have access to the Internet for correct operation
+3) Register using your email and password
+![Demo](assets/stepper.jpg)
+   
+4) Enjoy :)
+![Demo](assets/stepper_video_demo.mp4)
