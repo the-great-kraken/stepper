@@ -3,25 +3,29 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:stepper/bloc/home/bloc.dart';
 import 'package:stepper/bloc/step/bloc.dart';
 import 'package:stepper/screen/auth_screen/signup.dart';
 import 'bloc/signup/bloc.dart';
 
-import 'bloc/auth/bloc.dart';
+import 'bloc/app/bloc.dart';
 import 'firebase_options.dart';
 import 'screen/home_screen/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  if (Platform.isIOS) {
-    await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    );
-  } else {
-    await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  if (Platform.isAndroid) {
+    await Permission.activityRecognition.request().isGranted;
+  } else if (Platform.isIOS) {
+    await Permission.sensors.request().isGranted;
   }
-  runApp(MyApp());
+
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -40,7 +44,6 @@ class MyApp extends StatelessWidget {
         builder: (context, state) {
           if (state.status == "authenticated") {
             return MaterialApp(
-              title: 'Flutter Demo',
               theme: ThemeData(
                 colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
                 useMaterial3: true,
@@ -49,12 +52,11 @@ class MyApp extends StatelessWidget {
             );
           } else {
             return MaterialApp(
-              title: 'Flutter Demo',
               theme: ThemeData(
                 colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
                 useMaterial3: true,
               ),
-              home: SignUpForm(),
+              home: const SignUpForm(),
             );
           }
         },

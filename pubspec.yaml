@@ -17,6 +17,11 @@ dependencies:
   firebase_auth: ^4.10.0
   flutter_bloc: ^8.1.3
   pedometer: ^4.0.1
+  cloud_firestore: ^4.9.2
+  permission_handler: ^11.0.0
+  firebase_storage: ^11.2.7
+  flutter_foreground_service: ^0.4.1
+  shared_preferences: ^2.2.1
 
 dev_dependencies:
   flutter_test:
@@ -30,3 +35,4 @@ flutter:
 
   assets:
     - assets/foot.png
+    - assets/images/

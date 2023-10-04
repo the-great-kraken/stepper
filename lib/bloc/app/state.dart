@@ -1,10 +1,5 @@
 part of 'bloc.dart';
 
-enum AppStatus {
-  authenticated,
-  unauthenticated,
-}
-
 class AppState extends Equatable {
   const AppState({
     required this.status,
@@ -22,6 +17,7 @@ class AppState extends Equatable {
         email: user.email,
         name: user.displayName,
         photo: user.photoURL,
+        items: Repository().fetchUserItems(),
       );
     }
 

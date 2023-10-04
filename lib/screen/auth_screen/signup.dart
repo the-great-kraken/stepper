@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stepper/bloc/signup/bloc.dart';
 
-import '../../bloc/auth/bloc.dart';
+import '../../bloc/app/bloc.dart';
 
 class SignUpForm extends StatelessWidget {
   const SignUpForm({Key? key}) : super(key: key);

@@ -26,3 +26,12 @@ class AppLogin extends AppEvent {
   @override
   List<Object> get props => [email, password];
 }
+
+class AddAchievement extends AppEvent {
+  const AddAchievement(this.index);
+
+  final String index;
+
+  @override
+  List<Object> get props => [index];
+}

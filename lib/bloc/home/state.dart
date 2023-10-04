@@ -6,7 +6,9 @@ class HomeState extends Equatable {
   });
 
   factory HomeState.initial() {
-    return const HomeState(index: 0);
+    return const HomeState(
+      index: 0,
+    );
   }
 
   final int index;
